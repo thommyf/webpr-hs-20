@@ -7,8 +7,39 @@
 <body>
     <script>
 
+        const x = 1;
+        document.writeln(x === 1);
+
+        function foo(){
+            const x = 2;
+            document.writeln(x === 2);
+
+        }
+
+        ( () => { let x = 2; document.writeln(x === 2) } ) ()  //immediately invoked function expression
+
+        foo();
+        document.writeln(x === 1);
+        document.writeln("///");
 
 
+        // Lambda Ausdrücke -- Lambda Kalkül
+
+        const id    = x => x;
+        const konst = x => y => x;
+
+        document.writeln( id(id) === id );
+        document.writeln( konst(id)(undefined) === id ); //nachfolgender Parameter wird ignoriert
+
+
+        // für Quiz
+        // const snd = x => y => y;
+        const snd = konst(id)
+
+        document.writeln( snd(undefined)(id) === id );
+        
+
+        blablubs = <your...>
 
 
     </script>
