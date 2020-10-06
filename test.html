@@ -8,24 +8,16 @@
 
 <body>
   <script>
-    const Left = x => f => g => f (x);
-    const Right = x => f => g => g (x);
-    const either = e => f => g => e (f) (g);
-    const id = x => x;
+    // const twice = a => a * 2;
+    // document.writeln([1,2,3].map(twice).toString() === "2,4,6");
 
-    const eShow = e => either( e )
-                             (e => "Cannot divide by 0")
-                             (e =>"Result is: " + e); 
+    // const divides = x => y => y % x === 0;
+    // document.writeln([1,2,3,4,5,6].filter(divides(3)).toString());
+    // document.writeln([1,2,3,4,5,6].filter(divides(3)).toString() === "3,6");
 
-    const x_ = Math.random();
-    const safeDiv = num => divisor =>
-      divisor === 0 ?
-      Left("Cannot divide by 0") :
-      Right(num / divisor);
-
-    safeDiv(1)(0)
-      
-    document.writeln(eShow(safeDiv(1)(0)) === "Cannot divide by 0" && eShow(safeDiv(x_)(1)) === "Result is: " + x_);
+    // const join = acc => (cur, x) => cur + acc + x;
+    // document.writeln([1,2,3].reduce(join('-')));
+    // document.writeln([1,2,3].reduce(join('-')) === '1-2-3');
   </script>
 
 

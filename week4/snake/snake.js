@@ -20,13 +20,13 @@ let snake = [
 let food = Pair(15)(15);
 
 // function snakeEquals(a, b) { return a.x === b.x && a.y === b.y }
-const pairEq = a => b =>  undefined; // todo: your code here
+const pairEq = a => b =>  fst(a) === fst(b) && snd(a) === snd(b); // todo: your code here
 
 // Pair + Pair = Pair        // Monoid
-const pairPlus = a => b =>  undefined; // todo: your code here
+const pairPlus = a => b =>  Pair(fst(a)+fst(b))(snd(a)+snd(b)); // todo: your code here
 
 // Function and Pair = Pair  // Functor
-const pairMap = f => p =>  undefined; // todo: your code here
+const pairMap = f => p =>  Pair(f(fst(p)))(f(snd(p))); // todo: your code here
 
 
 function changeDirection(orientation) {
@@ -79,8 +79,8 @@ function nextBoard() {
     const max = 20;
     const oldHead = snake[0];
 
-    const newHead = undefined; // todo: your code here: old head plus direction
-    const head    = undefined; // todo: your code here: new head put in bounds
+    const newHead = pairPlus(oldHead)(direction()); // todo: your code here: old head plus direction
+    const head    = pairMap(inBounds(max))(head); // todo: your code here: new head put in bounds
 
     const pickRandom = () => Math.floor(Math.random() * max);
     if (true) {  // todo: have we found any food?
