@@ -6,6 +6,15 @@
 </head>
 <body>
     <script>
+        let x = 1;
+        document.writeln(x === 1);
+        function foo() {
+            const x = 2;
+            document.writeln(x === 2);
+        }
+        ( () => { let x = 2; document.writeln(x === 2) } ) () // IIFE
+        foo();
+        document.writeln(x === 1);
 
         const x = 1;
         document.writeln(x === 1);
