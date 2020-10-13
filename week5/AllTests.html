@@ -6,6 +6,15 @@
 </head>
 <body>
 
+    <script>
+        const sources = ['function', 'lambda', 'snake'];
+
+        sources.forEach( source => {
+            document.writeln(`<scricpt src="${source}/${source}.js"></`     + 'script');
+            document.writeln(`<scricpt src="${source}/${source}Test.js"></` + 'script');
+        })
+    </script>
+
     <script src="function/function.js"></script>
     <script src="function/functionTest.js"></script>
 

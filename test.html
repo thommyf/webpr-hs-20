@@ -8,19 +8,18 @@
 
 <body>
   <script>
-    // const twice = a => a * 2;
-    // document.writeln([1,2,3].map(twice).toString() === "2,4,6");
+    const factor_ = 0.2;
+    // eval und function 
+    // const bonusCalculation = e => eval(e.bonus = e.revenue * factor_);
 
-    // const divides = x => y => y % x === 0;
-    // document.writeln([1,2,3,4,5,6].filter(divides(3)).toString());
-    // document.writeln([1,2,3,4,5,6].filter(divides(3)).toString() === "3,6");
+    const bonusCalculation = Function('e', 'return e.bonus = e.revenue * factor_' );
 
-    // const join = acc => (cur, x) => cur + acc + x;
-    // document.writeln([1,2,3].reduce(join('-')));
-    // document.writeln([1,2,3].reduce(join('-')) === '1-2-3');
+    const e = { revenue: 10000, bonus: null };
+    bonusCalculation(e);
+    e.bonus === e.revenue * factor_;
+
+    document.writeln(e.bonus === e.revenue * factor_);
   </script>
-
-
 </body>
 
 </html>
