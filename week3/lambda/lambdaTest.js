@@ -51,11 +51,11 @@ ok.push( dierk(lastname)  === "König");
 // ok.push( tdierk(tage)       === 50);
 //
 // // tuple
-// const [Person, fn, ln, ag] = Tuple(3);
-// const person = Person("Dierk")("König")(50);
-// ok.push( person(fn) === "Dierk");
-// ok.push( person(ln) === "König");
-// ok.push( person(ag) === 50);
+const [Person, fn, ln, ag] = Tuple(3);
+const person = Person("Dierk")("König")(50);
+ok.push( person(fn) === "Dierk");
+ok.push( person(ln) === "König");
+ok.push( person(ag) === 50);
 //
 // // composed Tuple
 //
@@ -73,27 +73,27 @@ const safeDiv = num => divisor =>
     ? Left("schlecht!")
     : Right(num / divisor);
 
-either( safeDiv(1)(0)  )
-      ( x => console.error(x))
-      ( x => console.log(x));
+safeDiv(1)(0)
+      ( console.error)
+      ( console.log);
 
 
-// const [Cash, CreditCard, Invoice, PayPal, pay] = Choice(4);
-// const cash = Cash ();
-// const card = CreditCard ("0000-1111-2222-3333");
-// const invo = Invoice    ({name:"Roger", number:"4711"});
-// const pal  = PayPal     (person);  // the payload can be a partially applied function, e.g. Tuple ctor
-// const doPay = method =>
-//     pay (method)
-//         ( _       => "paid cash")
-//         ( number  => "credit card "+number)
-//         ( account => account.name + " " + account.number )
-//         ( person  => "pal: " + person(fn) );
-//
-// ok.push( doPay(cash) === "paid cash");
-// ok.push( doPay(card) === "credit card 0000-1111-2222-3333");
-// ok.push( doPay(invo) === "Roger 4711");
-// ok.push( doPay(pal ) === "pal: Dierk");
+const [Cash, CreditCard, Invoice, PayPal, pay] = Choice(4);
+const cash = Cash ();
+const card = CreditCard ("0000-1111-2222-3333");
+const invo = Invoice    ({name:"Roger", number:"4711"});
+const pal  = PayPal     (person);  // the payload can be a partially applied function, e.g. Tuple ctor
+const doPay = method =>
+    pay (method)
+        ( _       => "paid cash")
+        ( number  => "credit card "+number)
+        ( account => account.name + " " + account.number )
+        ( person  => "pal: " + person(fn) );
+
+ok.push( doPay(cash) === "paid cash");
+ok.push( doPay(card) === "credit card 0000-1111-2222-3333");
+ok.push( doPay(invo) === "Roger 4711");
+ok.push( doPay(pal ) === "pal: Dierk");
 
 
 
