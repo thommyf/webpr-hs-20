@@ -13,10 +13,17 @@ function start() {
     display(context, Function('x', 'return ' + userFunction.value) );
     userFunction.onchange = evt => display(context, Function('x', 'return ' + userFunction.value));
 
+<<<<<<< HEAD
 
 
     // display(context, x => eval(userFunction.value) );
     // userFunction.onchange = evt => display(context, x => eval(userFunction.value));
+=======
+    display(context, Function('x', 'return ' + userFunction.value) );
+
+    userFunction.onchange = evt => display(context, Function('x', 'return ' + userFunction.value) );
+
+>>>>>>> upstream/master
 }
 
 function display(context, f) {
