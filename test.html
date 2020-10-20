@@ -4,22 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Function Tests</title>
+  <!-- C:\Users\thomm\webpr -->
 </head>
 
 <body>
   <script>
-    const factor_ = 0.2;
-    // eval und function 
-    // const bonusCalculation = e => eval(e.bonus = e.revenue * factor_);
+    // const Person = name => {
+    //   let age = 0;
+    //   return {
+    //     getAge: ()       => age,
+    //     setAge: newAge   => age = newAge,
+    //     getName: ()      => name,
+    //     setName: newName => name = newName
+    //   }
+    // };
 
-    const bonusCalculation = Function('e', 'return e.bonus = e.revenue * factor_' );
+    // const me = Person("Myself");
+    // me.setName("Sherlock");
+    // document.writeln(me.getName() === "Sherlock");
 
-    const e = { revenue: 10000, bonus: null };
-    bonusCalculation(e);
-    e.bonus === e.revenue * factor_;
 
-    document.writeln(e.bonus === e.revenue * factor_);
+    
   </script>
 </body>
 
+<!-- QUIZ: Verschiedene Arten von Objekt Encoding:
+  - {:Value} -->
 </html>
