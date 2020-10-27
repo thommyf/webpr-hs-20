@@ -36,7 +36,7 @@
 
     ok.push(s instanceof Student);
     ok.push(s.__proto__ === Student.prototype);
-    ok.push(Object.getPrototypeOf(s) === Student.prototype);
+    ok.push(Object.getPrototypeOf(s) === Student.prototype); //Wichtig für Quiz
     ok.push(s instanceof Person);
     ok.push(s instanceof Object);
     ok.push(Student instanceof Function);
@@ -93,7 +93,7 @@
     }
 
     const dk = Person( {work: () => ""} );
-
+    Object.setPrototypeOf(dk, Person.prototype);
     ok.push(dk instanceof Person);
 
     report("inheritance-setProto", ok);

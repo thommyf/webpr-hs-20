@@ -23,11 +23,55 @@
     // me.setName("Sherlock");
     // document.writeln(me.getName() === "Sherlock");
 
+    // const xs1_ = [1, 2, 3];
+    // const xs2_ = [1, 2];
+    // const xs3_ = [1, 2];
+    // const xs4_ = [1];
+    // const ys1_ = [1, 2, 3];
+    // const ys2_ = [1, 3];
+    // const ys3_ = [1, 2];
+    // const ys4_ = [1];
 
+
+    // Array.prototype.eq = function (x) {
+    //   if (x.length !== this.length) {
+    //     return false;
+    //   }
+
+    //   for (let i = 0; i < this.length; i++) {
+    //     if (x[i] !== this[i]) {
+    //       return false;
+    //     }
+    //   }
+
+    //   return true;
+    // }
+
+    // console.log(xs1_.eq(ys1_) && !xs2_.eq(ys2_) && xs3_.eq(ys3_) && !xs3_.eq(ys4_) && !xs4_.eq(ys3_));
+
+    // class Person {
+    //   constructor(name) {
+    //     this.name = name;
+    //   }
+    //   isCool() { return this.name.length > 3 };
+    // }  
+
+    // const p = new Person("Dierk");
+    // // p.prototype.isCool = () => true;   
+    // document.writeln(p.isCool());
+
+    class Person  { }
+    class Student { }
     
+    const s = new Student();
+    Object.setPrototypeOf(Student.prototype, Person.prototype);
+       
+    document.writeln(s instanceof Person);
+
   </script>
 </body>
 
 <!-- QUIZ: Verschiedene Arten von Objekt Encoding:
   - {:Value} -->
+
 </html>
