@@ -11,6 +11,9 @@
         div {
             padding-left: 1em;
         }
+        #todoContainer label {
+            display: none;
+        }
     </style>
 </head>
 <body onload="startTodo()">
@@ -27,8 +30,8 @@
 <div>Number of Tasks: <span id="numberOfTasks">0</span></div>
 <div>Open Tasks: <span id="openTasks">0</span></div>
 
-
 <script src="todo.js"></script>
+<script> addTodo(); </script>
 
 </body>
 
