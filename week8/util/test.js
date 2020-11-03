@@ -22,7 +22,7 @@ const Assert = () => {
  * providing a scope and name for a test callback that fills the array
  * of boolean checks
  * @param {string} origin
- * @param {function([boolean]): *} callback
+ * @param {function(Assert): void} callback
  */
 const test = (origin, callback) => {
     const assert = Assert();      //    das ok anlegen
