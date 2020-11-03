@@ -60,13 +60,34 @@
     // // p.prototype.isCool = () => true;   
     // document.writeln(p.isCool());
 
-    class Person  { }
-    class Student { }
+    // class Person  { }
+    // class Student { }
     
-    const s = new Student();
-    Object.setPrototypeOf(Student.prototype, Person.prototype);
+    // const s = new Student();
+    // Object.setPrototypeOf(Student.prototype, Person.prototype);
        
-    document.writeln(s instanceof Person);
+    // document.writeln(s instanceof Person);
+
+
+    // function Todo(text) {
+    //   let done = false;
+    //   const check = () => this.done = true;
+    //   return {
+    //     getText: () => text,
+    //     isDone:  () => done,
+    //     check:  check
+    //   }
+    // }
+
+    // let todo = new Todo("buy milk");
+    // todo.check();
+    // document.writeln(todo.isDone());
+
+    // function handle(callback) {
+    //   return callback( [] );
+    // }
+
+    // document.writeln( handle( it => { it.push(1); return it; } ).length === 1 );
 
   </script>
 </body>

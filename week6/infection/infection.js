@@ -43,6 +43,7 @@ function nextBoard() {
         uninfected.forEach(uninfectedPerson => {
             if (touching(infectedPerson, uninfectedPerson)) {
                 uninfectedPerson.infected = true;
+                
             }
         })
     });
