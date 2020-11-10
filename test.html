@@ -62,10 +62,10 @@
 
     // class Person  { }
     // class Student { }
-    
+
     // const s = new Student();
     // Object.setPrototypeOf(Student.prototype, Person.prototype);
-       
+
     // document.writeln(s instanceof Person);
 
 
@@ -88,15 +88,16 @@
     // }
 
     // document.writeln( handle( it => { it.push(1); return it; } ).length === 1 );
+    //=============================================================================================================
+    // 16a 
+    //  const inc    = x => x + 1;
+    //  const double = x => x * 2;
 
-     const inc    = x => x + 1;
-     const double = x => x * 2;
-     
-    Function.prototype.then = func =>  {
-      console.log(func()); 
-      return func();
-      
-    }
+    // Function.prototype.then = func =>  {
+    //   console.log(func()); 
+    //   return func();
+
+    // }
 
     // Function.prototype.then = function(callback, arg) {
     //   console.log("then aufgerufen");
@@ -106,29 +107,81 @@
     //  function then (x) { 
     //    compose(x);
     //  };
-    console.log("Übung 1");
-    console.log(inc.then(double).then(double) (1));
-    console.log( inc.then(double).then(double) (1) === 8 );
-  
+    // console.log("Übung 1");
+    // console.log(inc.then(double).then(double) (1));
+    // console.log( inc.then(double).then(double) (1) === 8 );
+
 
     //=============================================================================================================
     //Aufgabe Q18a
-    const failSafe = param1 => callback => param2 => {
-      try {
-        return callback( param2 );
-        //return done;
-      }
-      catch {
-        return param1;
-      }
-    }
-    
-    const doError = x => { throw new Error() };
-    const errorCount = failSafe (1) (doError);
-    
-     console.log(failSafe (false) (x=>x) (true) && failSafe (true) (doError) (null) && errorCount(null) === 1);
+    // const failSafe = param1 => callback => param2 => {
+    //   try {
+    //     return callback( param2 );
+    //   }
+    //   catch {
+    //     return param1;
+    //   }
+    // }
+
+    // const doError = x => { throw new Error() };
+    // const errorCount = failSafe (1) (doError);
+
+    //  console.log(failSafe (false) (x=>x) (true) && failSafe (true) (doError) (null) && errorCount(null) === 1);
     //=============================================================================================================
 
+    // const Observable = value => {
+    //   const listeners = [];
+    //   return {
+    //     onChange: callback => listeners.push(callback),
+    //     getValue: () => value,
+    //     setValue: val => {
+    //       if (value === val) return;
+    //       value = val;
+    //       listeners.forEach(listener => listener(val));
+    //     }
+    //   }
+    // };
+
+    // const color = Observable('white');
+    // let observed = null;
+    // color.onChange( val => observed = val);
+
+    // document.writeln(observed === color.getValue());
+    //=============================================================================================================  
+    // Q20 
+    // const x_ = 5;
+    // const y_ = 6;
+    // const z_ = 7;
+
+    // const Observable = value => {
+    //   const listeners = [];
+    //   return {
+    //     onChange: callback => {
+    //       listeners.push(callback);
+    //       callback(value, value);
+    //     },
+    //     getValue: () => value,
+    //     setValue: newValue => {
+    //       if (value === newValue) return;
+    //       const oldValue = value;
+    //       value = newValue;
+    //       listeners.forEach(callback => callback(value, oldValue));
+    //     }
+    //   }
+    // };
+
+    // let sum = 0;
+    // const trackable = Observable(0);
+
+    // trackable.onChange( val => sum += val );
+
+    // trackable.setValue(x_); // values x_, y_, z_ are given. Do not override.
+    // trackable.setValue(y_);
+    // trackable.setValue(z_);
+
+    // console.log(trackable.getValue());
+    // document.writeln( trackable.getValue() === z_ && sum === x_ + y_ + z_ );
+    //=============================================================================================================
   </script>
 </body>
 
