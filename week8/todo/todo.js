@@ -2,8 +2,6 @@ function startTodo() {
 
 }
 
-let todoCounter = 0;
-
 function addTodo() {
     todoCounter++;
 
@@ -29,4 +27,12 @@ function addTodo() {
 
     document.getElementById("openTasks").textContent = todoCounter - checked.length;
 
+//     const container = document.getElementById("todoContainer");
+//     container.innerHTML += `
+//     <tr>
+//         <td><input type="text" value="empty"></td>
+//         <td><input type="checkbox"></td>
+//     </tr>
+// `
+    
 }
