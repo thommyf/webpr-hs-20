@@ -182,6 +182,57 @@
     // console.log(trackable.getValue());
     // document.writeln( trackable.getValue() === z_ && sum === x_ + y_ + z_ );
     //=============================================================================================================
+
+
+    // const idPromise = x => new Promise( resolve => resolve(x));
+
+    // // document.writeln(idPromise(1));
+    // // idPromise(1)
+    // //   .then( it => { document.writeln(it); return it; })
+    // //   .then( it => document.writeln(it));
+
+    // const writer = x => {
+    //   document.writeln(x);
+    //   return idPromise(x);
+    // };
+    // // const inc        = n => n +1;
+    // const filterEven = n => n % 2 === 0 ? n : undefined;
+    // // const filterEven = n => { if (n % 2 === 0) return n; else throw Error("not even") };
+
+    // idPromise(1)
+    //   .then( writer)
+    //   .then( filterEven )
+    //   .then( writer );
+
+    //=============================================================================================================
+    // Q24
+    // const idPromise = x => new Promise  
+
+
+    //=============================================================================================================
+    // Q24a
+    const NullSafe = x => {
+      const isNullSafe = y => y && y.then;
+      const maywrap = y => ___; // if y is not NullSafe yet, make it so
+      return {
+        then: fn => ___ // see(1)
+      }
+    };
+
+    NullSafe(1).then(console.log); // will call the log
+    NullSafe(null).then(console.log); // will not call the log
+    NullSafe(2).then(x => null).then(console.log); // will not call the log
+
+    // x_ and y_ are given. do not override.                                    
+    NullSafe(x_)
+      .then(x => x * 2) // must auto-promote
+      .then(x => NullSafe(x)) // must not auto-promote
+      .then(x => y_ = x + 1) // store value, check no double promotion
+      .then(x => null) // jump over rest
+      .then(x => x.mustNotBeCalled) !== null && y_ === x_ * 2 + 1
+
+
+      
   </script>
 </body>
 
