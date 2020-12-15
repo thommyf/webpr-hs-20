@@ -5,11 +5,17 @@
 </head>
 <body>
 
+<pre><script>
+        const array = ["aaa", "bbb", "ccc"];
 
-<script>
+        for (let i = 0; i < array.length; i++) {
+            document.writeln(array[i++]);
+        }
 
+        array.find( s => document.writeln(s) );
 
-</script>
+    </script>
+</pre>
 
 </body>
 </html>
