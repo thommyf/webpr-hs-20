@@ -9,10 +9,10 @@
         const array = ["aaa", "bbb", "ccc"];
 
         for (let i = 0; i < array.length; i++) {
-            document.writeln(array[i++]);
+            document.writeln(array[i]);
         }
 
-        array.find( s => document.writeln(s) );
+        array.forEach( s => document.writeln(s) );
 
     </script>
 </pre>
