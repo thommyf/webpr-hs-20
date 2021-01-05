@@ -18,7 +18,7 @@ Themen:
 
 
 <script>
-        const array = ["aaa", "bbb", "ccc"];
+        const array = ["aaa", "bbb", "ccc", "d", "e", "f"];
         // const array = [1,2,3,4];
         // const result = array.reduce( (accu, cur) => accu + 1  , 0) // length
         // const result = array.reduce( (accu, cur) => accu + cur  , 0)  // sum
@@ -34,7 +34,16 @@ Themen:
 
         const bools = [true, false, true];
         // const result = bools.reduce( (accu, cur) => accu && cur , true) // every
-        const result = bools.reduce( (accu, cur) => accu || cur , false) // any
+        // const result = bools.reduce( (accu, cur) => accu || cur , false) // any
+
+        // const result = array.slice() // copy
+        // const result = array.slice(3)
+        // const result = array.slice(3, 4) // begin incl, end excl.
+        // const result = array.slice(0, array.length) // begin incl, end excl.
+        // const result = array.slice(0, -3) // begin incl, end neg
+        // const result = array.slice(4, 0) // not supported -> empty array
+
+        const result = array.splice(-3,0,"x","y") // changes the receiver!!
 
         document.writeln(array);
         document.writeln(result);
