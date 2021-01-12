@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Refresher</title>
+</head>
+<body>
+
+
+<pre>
+Neue Quiz Server URL:  http://86.119.43.169:9090
+
+Themen:
+    reduce (fold, inject)
+    slice vs splice
+    callbacks
+    observable
+    promises
+
+
+<script>
+        const array = ["aaa", "bbb", "ccc", "d", "e", "f"];
+        // const array = [1,2,3,4];
+        // const result = array.reduce( (accu, cur) => accu + 1  , 0) // length
+        // const result = array.reduce( (accu, cur) => accu + cur  , 0)  // sum
+        // const result = [].reduce( (accu, cur) => accu + cur)  // without start value -> type error
+        // const result = array.reduce( (accu, cur) => accu + cur  , '')  // concat
+        // const result = array.reduce( (accu, cur) => accu + cur.length  , 0)  // concat
+        // const result = array.reduce( (accu, cur) => [...accu,cur]  , []) // copy
+        // const result = array.reduce( (accu, cur) => [cur, ...accu]  , []) // reverse
+        const pred = it => it.startsWith("b");
+        // const result = array.reduce( (accu, cur) => pred(cur) ? [...accu,cur] : accu  , []) // filter
+        const fn = it => it.length;
+        // const result = array.reduce( (accu, cur) => [...accu, fn(cur)] , []) // map
+
+        const bools = [true, false, true];
+        // const result = bools.reduce( (accu, cur) => accu && cur , true) // every
+        // const result = bools.reduce( (accu, cur) => accu || cur , false) // any
+
+        // const result = array.slice() // copy
+        // const result = array.slice(3)
+        // const result = array.slice(3, 4) // begin incl, end excl.
+        // const result = array.slice(0, array.length) // begin incl, end excl.
+        // const result = array.slice(0, -3) // begin incl, end neg
+        // const result = array.slice(4, 0) // not supported -> empty array
+
+        const result = array.splice(-3,0,"x","y") // changes the receiver!!
+
+        document.writeln(array);
+        document.writeln(result);
+
+    </script>
+</pre>
+
+</body>
+</html>
